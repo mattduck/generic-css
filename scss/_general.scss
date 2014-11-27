@@ -1,0 +1,569 @@
+/******************************************************************************/
+/*
+/* Ranges taken from Foundation (MIT License | https://github.com/zurb/foundation)
+/*
+/******************************************************************************/
+$small-range: (0em, 35em);
+$medium-range: (35.063em, 64em);
+$large-range: (64.063em, 90em);
+$xlarge-range: (90.063em, 120em);
+
+$screen: "only screen";
+
+$landscape: "#{$screen} and (orientation: landscape)";
+$portrait: "#{$screen} and (orientation: portrait)";
+
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
+
+
+/******************************************************************************/
+/*
+/* Fonts
+/*
+/******************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic|Roboto:700|Inconsolata:400,700);
+
+/* Use these to avoid Google
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'), url() format('truetype');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url() format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), url() format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Merriweather Bold'), local('Merriweather-Bold'), url() format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Merriweather Italic'), local('Merriweather-Italic'), url() format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url() format('truetype');
+}
+*/
+
+$font-family-heading: "Roboto", sans-serif;
+$font-family-body: "Merriweather", serif;
+$font-family-monospace: "Inconsolata", monospace;
+
+
+/******************************************************************************/
+/*
+/* Colours
+/*
+/******************************************************************************/
+// Accent colours from Solarized (MIT License | http://ethanschoonover.com/solarized)
+$col-yellow:    #b58900;
+$col-orange:    #cb4b16;
+$col-red:       #dc322f;
+$col-magenta:   #d33682;
+$col-violet:    #6c71c4;
+$col-blue:      #268bd2;
+$col-cyan:      #2aa198;
+$col-green:     #859900;
+
+$col-text: $col-base00;
+$col-text-hl: $col-base01;
+$col-bg: $col-base3;
+$col-bg-hl: $col-base2;
+$col-border: $col-base1;
+
+$col-h1: $col-red;
+$col-h2: $col-yellow;
+$col-h3: $col-blue;
+$col-h4: $col-cyan;
+$col-h5: $col-violet;
+$col-h6: $col-green;
+
+
+/******************************************************************************/
+/*
+/* Sizes
+/*
+/******************************************************************************/
+
+$font-size-base: 16px;
+$font-size-base-small: 15px;
+
+$size-padding: $font-size-base / 2;
+$size-padding-large: $font-size-base * 2;
+
+
+/******************************************************************************/
+/*
+/* Mixins
+/*
+/******************************************************************************/
+
+// The two Solarized background colours are used. Text selection sets background
+// to the inverse colour.
+@mixin background-hl(){
+    background-color: $col-bg-hl;
+    // Child elements
+    ::selection {
+        background-color: $col-bg;
+    }
+    ::-moz-selection {
+        background-color: $col-bg;
+    }
+    // The element itself
+    &::selection {
+        background-color: $col-bg;
+    }
+    &::-moz-selection {
+        background-color: $col-bg;
+    }
+}
+
+
+/******************************************************************************/
+/*
+/* Elements
+/*
+/******************************************************************************/
+html {
+    background-color: $col-bg-hl;
+    @include background-hl();
+}
+
+$body-width: 650px;
+body {
+    background-color: $col-bg;
+    max-width: $body-width;
+
+    padding: $size-padding-large;
+    font-size: $font-size-base;
+    margin: auto;
+    line-height: 1.55;
+    @media #{$small-up} {
+        margin: auto;
+        font-size: $font-size-base-small;
+        line-height: 1.3;
+        padding: $font-size-base;
+    }
+    @media #{$medium-up} {
+        font-size: $font-size-base;
+        line-height: 1.55;
+        padding: $size-padding-large;
+    }
+    @media #{$large-up} {
+        margin-left: 130px;
+        margin-right: $size-padding-large;
+    }
+
+    font-family: $font-family-body;
+    font-weight: 400;
+    color: $col-text;
+
+    // Elements belonging to body
+    ::selection {
+        background-color: $col-base03;
+        color: $col-magenta;
+    }
+    ::-moz-selection {
+        background-color: $col-bg-hl;
+        color: $col-magenta;
+    }
+    // Body text itself
+    &::selection {
+        background-color: $col-base03;
+        color: $col-magenta;
+    }
+    &::-moz-selection {
+        background-color: $col-bg-hl;
+        color: $col-magenta;
+    }
+}
+
+p, blockquote, pre, hr, table, ul, ol, dl, img, video {
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    @media #{$small-up} {
+        margin-top: 1.1em;
+        margin-bottom: 1.1em;
+    }
+    @media #{$medium-up} {
+        margin-top: 1.6em;
+        margin-bottom: 1.6em;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    color: $col-text-hl;
+    font-weight: 700;
+
+    line-height: 1.4;
+    @media #{$small-up} {
+        line-height: 1.3;
+    }
+    @media #{$medium-up} {
+        line-height: 1.4;
+    }
+
+    padding-left: $size-padding;
+    padding-right: $size-padding;
+    border-radius: 2px;
+
+    position: relative;
+    &:before {
+        font-size: $font-size-base * 0.8;
+        @media #{$small-only} {
+            font-size: $font-size-base-small * 0.5;
+        }
+        margin-right: 0.5em;
+        vertical-align: top;
+    }
+
+    margin-top: 2.4em;
+    margin-bottom: 1em;
+    @media #{$small-up} {
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+    @media #{$medium-up} {
+        margin-top: 2.4em;
+        margin-bottom: 1em;
+    }
+
+    a:visited {
+        color: $col-blue;
+    }
+    a:hover, a:focus {
+        color: $col-red;
+    }
+    img {
+        @include background-hl();
+    }
+}
+h6 {
+    font-size: $font-size-base;
+    border-left: 1px solid $col-border;
+    @media #{$small-only} {
+        font-size: $font-size-base-small;
+    }
+    &:before {
+        content: "* * * * * *";
+        color: $col-h6;
+    }
+}
+h5 {
+    font-size: $font-size-base * 1.2;
+    border-left: 1px solid $col-border;
+    @media #{$small-only} {
+        font-size: $font-size-base-small * 1.1;
+    }
+    &:before {
+        content: "* * * * *";
+        color: $col-h5;
+    }
+}
+h4 {
+    border-left: 1px solid $col-border;
+    font-size: $font-size-base * 1.3;
+    @media #{$small-only} {
+        font-size: $font-size-base-small * 1.2;
+    }
+    &:before {
+        content: "* * * *";
+        color: $col-h4;
+    }
+}
+h3 {
+    border-left: 1px solid $col-border;
+    font-size: $font-size-base * 1.6;
+    @media #{$small-only} {
+        font-size: $font-size-base-small * 1.4;
+    }
+    &:before {
+        content: "* * *";
+        color: $col-h3;
+    }
+}
+h2 {
+    @include background-hl();
+    border: 1px solid $col-border;
+    font-size: $font-size-base * 2.2;
+    @media #{$small-only} {
+        font-size: $font-size-base-small * 1.7;
+    }
+    &:before {
+        content: "* *";
+        color: $col-h2;
+    }
+}
+h1 {
+    @include background-hl();
+    border: 2px solid $col-text-hl;
+    font-size: $font-size-base * 2.7;
+    @media #{$small-only} {
+        font-size: $font-size-base-small * 2;
+    }
+    &:before {
+        content: "*";
+        color: $col-h1;
+    }
+    margin-top: 2em;
+    
+}
+
+ul, ol, {
+    padding-left: 35px;
+    @media #{$small-up} {
+        padding-left: 10px;
+    }
+    @media #{$medium-up} {
+        padding-left: 35px;
+    }
+}
+ul {
+    list-style: disc;
+    ul {
+        list-style: square;
+        ul {
+            list-style: disc;
+            ul {
+                list-style: square;
+                ul {
+                    list-style: disc;
+                }
+            }
+        }
+    }
+}
+ol {
+    list-style: decimal-leading-zero;
+    ol {
+        list-style: lower-roman;
+        ol {
+            list-style: upper-latin;
+            ol {
+                list-style: lower-latin;
+                ol {
+                    list-style: decimal-leading-zero;
+                }
+            }
+        }
+    }
+}
+
+em, i {
+    color: $col-text-hl;
+}
+strong, b {
+    color: $col-text-hl;
+}
+
+a {
+    color: $col-blue;
+    text-decoration: underline;
+    display: inline-block;
+
+    &:visited {
+        color: $col-violet;
+    }
+
+    &:focus, &:hover {
+        color: $col-orange;
+    }
+
+    &:after {
+        content: " ";
+    }
+}
+
+pre, code, {
+    font-family: $font-family-monospace;
+    color: $col-text-hl;
+    @include background-hl();
+}
+pre { 
+    font-size: $font-size-base;
+    @media #{$small-up} {
+        font-size: 9.5pt;
+    }
+    @media #{$medium-up} {
+        font-size: $font-size-base;
+
+        @media (orientation: landscape) {
+            width: 75vw;
+            min-width: $body-width - (2 * $size-padding);
+            border: 1px solid $col-bg;
+        }
+    }
+
+
+    border: none;
+    padding: $size-padding;
+
+    span {
+        // Try to enable background selection on syntax-highlighted code,
+        // assuming highlighting happens in <span> like org-mode.
+        &::selection {
+            background-color: $col-bg;
+        }
+        &::-moz-selection {
+            background-color: $col-bg;
+        }
+        margin: 0;
+    }
+}
+
+table {
+    margin-bottom: 1em;
+    border-collapse: separate;
+    border-spacing: 4px;
+
+    font-size: $font-size-base * 0.9;
+    @media #{$small-up} {
+        font-size: $font-size-base-small * 0.9;
+    }
+    @media #{$medium-up} {
+        font-size: $font-size-base * 0.9;
+    }
+}
+td, th {
+    text-align: left;
+    vertical-align: baseline;
+    @include background-hl();
+    padding: $size-padding;
+}
+th {
+    font-weight: 700;
+}
+
+blockquote {
+    color: $col-text-hl;
+    border-left: 6px solid $col-border;
+    margin-left: 0;
+
+    padding: $size-padding;
+    padding-left: $font-size-base;
+    @media #{$small-up} {
+        padding-left: $font-size-base-small;
+    }
+    @media #{$medium-up} {
+        padding-left: $font-size-base;
+    }
+}
+
+dt {
+    color: $col-text-hl;
+    @include background-hl();
+    display: inline-block;
+    padding-left: $size-padding;
+    padding-right: $size-padding;
+}
+dd {
+    margin-bottom: 1em;
+}
+
+img {
+    height: auto;
+    width: auto;
+    max-height: 650px;
+    max-width: 100%;
+}
+ul img, ol img, span img {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+video {
+    max-width: 100%;
+}
+
+hr {
+    color: $col-text;
+    background-color: $col-text;
+    border: 1px solid $col-text;
+    margin: 2em auto 2em;
+    width: 50%;
+}
+
+nav {
+    padding: $size-padding;
+    font-size: $font-size-base * 0.9;
+    @media #{$small-up} {
+        font-size: $font-size-base-small * 0.9;
+    }
+    @media #{$medium-up} {
+        font-size: $font-size-base * 0.9;
+    }
+
+    a {
+        margin: 0 4px;
+    }
+}
+
+button {
+    padding: $size-padding;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    color: $col-blue;
+    @include background-hl();
+
+    border-style: outset;
+    border-color: white $col-border $col-border white;
+    border-width: 1px 2px 2px 1px;
+
+    font-size: $font-size-base * 0.9;
+    @media #{$small-up} {
+        font-size: $font-size-base-small * 0.9;
+    }
+    @media #{$medium-up} {
+        font-size: $font-size-base * 0.9;
+    }
+
+    &:hover {
+        color: $col-red;
+    }
+}
+
+span {
+    margin: 0 $size-padding $size-padding 0;
+}

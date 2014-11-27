@@ -1,0 +1,82 @@
+/******************************************************************************/
+/*
+/* Org-mode export styles
+ * (plus some org-info.js handling)
+/*
+/******************************************************************************/
+.title {
+    text-align: left;
+}
+.todo {
+    font-family: $font-family-monospace;
+    color: $col-red;
+    font-family: $font-family-monospace;
+}
+.done {
+    color: $col-green;
+    font-family: $font-family-monospace;
+}
+.tag {
+    @include background-hl();
+    color: $col-yellow;
+    font-weight: 400;
+    font-family: $font-family-monospace;
+    font-size: 100%;
+}
+.timestamp, .timestamp-kwd {
+    color: $col-cyan;
+    font-family: $font-family-monospace;
+}
+.outline-2 {
+    li {
+        margin-top: 0.9em;
+        margin-bottom: 0.9em;
+    }
+    ul, ol {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+}
+
+
+#table-of-contents, #text-table-of-contents, .org-info-js_local-toc {
+    li {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    ul, ol {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+}
+
+#postamble{
+    text-align: right;
+    padding-top: $size-padding-large;
+}
+pre.src {
+    // Override "scroll", which adds scrollbars when not needed.
+    overflow: auto;
+}
+pre.src:before {
+    @include background-hl();
+    color: $col-text-hl;
+    top: 0;
+    right: 0;
+    border: none;
+}
+pre.src-python:before {
+    content: "Python";
+}
+pre {
+    box-shadow: none;
+}
+table {
+    border: none;
+}
+
+.section-number-1, .section-number-2,
+.section-number-3, .section-number-4,
+.section-number-5, .section-number-6 {
+    color: $col-text;
+}

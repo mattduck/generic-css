@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<link id="generic-css-dark" rel="stylesheet" type="text/css" href="css/generic-dark.css" />
+<link id="generic-css-light" rel="stylesheet" type="text/css" href="css/generic-light.css" />
+<script type="text/javascript" src="js/generic-css.js"></script>
+</head>
+<body>
+<h1 id="generic-css">Generic CSS</h1>
+
+<p>A CSS/Sass style for simple HTML documents. It has mainly been tested on
+Org-mode exports. Contributions welcome.</p>
+
+<ul>
+  <li><a href="https://github.com/mattduck/generic-css">Github</a></li>
+  <li><a href="https://mattduck.github.io/generic-css/index.html">Styled README</a></li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li><a href="https://mattduck.github.io/generic-css/demo/index.html">Demo elements</a></li>
+  <li><a href="https://mattduck.github.io/generic-css/demo/org-demo.html">An exported Org-mode file</a></li>
+</ul>
+
+<h2 id="features">Features</h2>
+
+<p>Except for a few classes specific to Org-mode exports, elements
+are styled directly. It uses the <a href="http://ethanschoonover.com/solarized">Solarized colour
+scheme</a>, and includes both light and dark
+versions. There are some media queries. <strong>Google Fonts is used</strong>, but you might
+prefer to provide your own - the files are included for convenience.</p>
+
+<h3 id="theme-selector">Theme selector</h3>
+
+<p>You can include <code>generic-css.js</code> to insert theme-selecting buttons at the
+top of the page (as seen on the styled README page). It expects your stylesheet
+links to have IDs <code>generic-css-dark</code> and <code>generic-css-light</code>, as in the below snippet:</p>
+
+<pre><code>&lt;link id="generic-css-dark"  rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-dark.min.css"&gt;
+&lt;link id="generic-css-light" rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-light.min.css"&gt;
+&lt;script type="text/javascript" src="https://raw.githubusercontent.com/mattduck/generic-css/master/js/generic-css.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h2 id="download">Download</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-light.css">generic-light.css</a></li>
+  <li><a href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-light.min.css">generic-light.min.css</a></li>
+  <li><a href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-dark.css">generic-dark.css</a></li>
+  <li><a href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-dark.min.css">generic-dark.min.css</a></li>
+  <li><a href="https://raw.githubusercontent.com/mattduck/generic-css/master/js/generic-css.js">generic-css.js</a></li>
+  <li><a href="https://raw.githubusercontent.com/mattduck/generic-css/master/js/generic-css.min.js">generic-css.min.js</a></li>
+</ul>
+
+<p>To try without downloading, use (light):</p>
+
+<pre><code>&lt;link href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-light.min.css" rel="stylesheet" type="text/css"&gt;
+</code></pre>
+
+<p>or (dark):</p>
+
+<pre><code>&lt;link href="https://raw.githubusercontent.com/mattduck/generic-css/master/css/generic-dark.min.css" rel="stylesheet" type="text/css"&gt;
+</code></pre>
+
+<h2 id="development">Development</h2>
+
+<p>Run <code>build.sh</code> to compile the Sass files to <code>./css</code>, compress the Javascript and
+export <code>README.md</code> to <code>index.html</code>:</p>
+
+<pre><code>cd $repository_root
+./build.sh
+</code></pre>
+
+<p>This requires:</p>
+
+<ul>
+  <li><code>sass</code></li>
+  <li><code>kramdown</code></li>
+  <li><code>uglifyjs</code></li>
+</ul>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<ul>
+  <li>This turned out to share some similarities with <a href="https://github.com/thomasf/solarized-css">solarized-css by
+thomasf</a>.</li>
+  <li>The demo Org-mode document comes from
+<a href="http://orgmode.org/worg">http://orgmode.org/worg</a>, and is licensed as
+described in the <code>.html</code> and <code>.org</code> files.</li>
+</ul>
+</body>
+</html>
