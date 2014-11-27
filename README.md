@@ -28,9 +28,9 @@ You can include `generic-css.js` to insert theme-selecting buttons at the
 top of the page (as seen on the styled README page). It expects your stylesheet
 links to have IDs `generic-css-dark` and `generic-css-light`, as in the below snippet:
 
-    <link id="generic-css-dark"  rel="stylesheet" type="text/css" href="//mattduck.github.io/generic-css/css/generic-dark.min.css">
-    <link id="generic-css-light" rel="stylesheet" type="text/css" href="//mattduck.github.io/generic-css/css/generic-light.min.css">
-    <script type="text/javascript" src="//mattduck.github.io/generic-css/js/generic-css.min.js"></script>
+    <link id="generic-css-dark"  rel="stylesheet" type="text/css" href="https://mattduck.github.io/generic-css/css/generic-dark.min.css">
+    <link id="generic-css-light" rel="stylesheet" type="text/css" href="https://mattduck.github.io/generic-css/css/generic-light.min.css">
+    <script type="text/javascript" src="https://mattduck.github.io/generic-css/js/generic-css.min.js"></script>
 
 
 ## Download
@@ -44,11 +44,11 @@ links to have IDs `generic-css-dark` and `generic-css-light`, as in the below sn
 
 To try without downloading, use (light):
 
-    <link href="//mattduck.github.io/generic-css/css/generic-light.min.css" rel="stylesheet" type="text/css">
+    <link href="https://mattduck.github.io/generic-css/css/generic-light.min.css" rel="stylesheet" type="text/css">
 
 or (dark):
 
-    <link href="//mattduck.github.io/generic-css/css/generic-dark.min.css" rel="stylesheet" type="text/css">
+    <link href="https://mattduck.github.io/generic-css/css/generic-dark.min.css" rel="stylesheet" type="text/css">
 
 
 ## Development
