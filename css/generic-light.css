@@ -652,14 +652,11 @@ strong, b {
 
 a {
   color: #268bd2;
-  text-decoration: underline;
-  display: inline-block; }
+  text-decoration: underline; }
   a:visited {
     color: #6c71c4; }
   a:focus, a:hover {
     color: #cb4b16; }
-  a:after {
-    content: " "; }
 
 code {
   background-color: #eee8d5;
@@ -879,8 +876,15 @@ span {
   margin-top: 0;
   margin-bottom: 0; }
 #table-of-contents ul, #table-of-contents ol, #text-table-of-contents ul, #text-table-of-contents ol, .org-info-js_local-toc ul, .org-info-js_local-toc ol {
-  margin-top: 0.3em;
+  margin-top: 0;
   margin-bottom: 0.3em; }
+
+@media (orientation: landscape) {
+  #text-table-of-contents {
+    width: 75vw;
+    min-width: 634px; } }
+#text-table-of-contents li a {
+  background-color: #fdf6e3; }
 
 #postamble {
   text-align: right;

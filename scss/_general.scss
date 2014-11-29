@@ -131,6 +131,7 @@ $font-size-base-small: 15px;
 
 $size-padding: $font-size-base / 2;
 $size-padding-large: $font-size-base * 2;
+$size-body-width: 650px;
 
 
 /******************************************************************************/
@@ -159,6 +160,17 @@ $size-padding-large: $font-size-base * 2;
     }
 }
 
+// Some elements are easier to read if they occupy more page width.
+@mixin extra-wide($border-color: ""){
+    @media (orientation: landscape) {
+        width: 75vw;
+        min-width: $size-body-width - (2 * $size-padding);
+        @if $border-color != "" {
+            border: 1px solid $border-color;
+        }
+    }
+}
+
 
 /******************************************************************************/
 /*
@@ -170,10 +182,9 @@ html {
     @include background-hl();
 }
 
-$body-width: 650px;
 body {
     background-color: $col-bg;
-    max-width: $body-width;
+    max-width: $size-body-width;
 
     padding: $size-padding-large;
     font-size: $font-size-base;
@@ -401,7 +412,6 @@ strong, b {
 a {
     color: $col-blue;
     text-decoration: underline;
-    display: inline-block;
 
     &:visited {
         color: $col-violet;
@@ -409,10 +419,6 @@ a {
 
     &:focus, &:hover {
         color: $col-orange;
-    }
-
-    &:after {
-        content: " ";
     }
 }
 
@@ -433,12 +439,7 @@ pre {
     }
     @media #{$medium-up} {
         font-size: $font-size-base;
-
-        @media (orientation: landscape) {
-            width: 75vw;
-            min-width: $body-width - (2 * $size-padding);
-            border: 1px solid $col-bg;
-        }
+        @include extra-wide($border-color: $col-bg);
     }
 
 

@@ -45,8 +45,14 @@
         margin-bottom: 0;
     }
     ul, ol {
-        margin-top: 0.3em;
+        margin-top: 0;
         margin-bottom: 0.3em;
+    }
+}
+#text-table-of-contents {
+    @include extra-wide();
+    li a {
+        background-color: $col-bg;
     }
 }
 
