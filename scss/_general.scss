@@ -431,6 +431,10 @@ code {
     border: 1px solid $col-base1;
 }
 pre { 
+    code {
+        border: none;
+    }
+
     @include background-hl();
     font-family: $font-family-monospace;
     color: $col-text-hl;

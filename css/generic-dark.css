@@ -678,6 +678,8 @@ pre {
   font-size: 16px;
   border: none;
   padding: 8px; }
+  pre code {
+    border: none; }
   pre ::selection {
     background-color: #002b36; }
   pre ::-moz-selection {
