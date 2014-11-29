@@ -661,23 +661,35 @@ a {
   a:after {
     content: " "; }
 
-pre, code {
+code {
+  background-color: #073642;
   font-family: "Inconsolata", monospace;
-  color: #93a1a1;
-  background-color: #073642; }
-  pre ::selection, code ::selection {
+  padding: 1px 0.2em;
+  border: 1px solid #586e75; }
+  code ::selection {
     background-color: #002b36; }
-  pre ::-moz-selection, code ::-moz-selection {
+  code ::-moz-selection {
     background-color: #002b36; }
-  pre::selection, code::selection {
+  code::selection {
     background-color: #002b36; }
-  pre::-moz-selection, code::-moz-selection {
+  code::-moz-selection {
     background-color: #002b36; }
 
 pre {
+  background-color: #073642;
+  font-family: "Inconsolata", monospace;
+  color: #93a1a1;
   font-size: 16px;
   border: none;
   padding: 8px; }
+  pre ::selection {
+    background-color: #002b36; }
+  pre ::-moz-selection {
+    background-color: #002b36; }
+  pre::selection {
+    background-color: #002b36; }
+  pre::-moz-selection {
+    background-color: #002b36; }
   @media only screen {
     pre {
       font-size: 9.5pt; } }

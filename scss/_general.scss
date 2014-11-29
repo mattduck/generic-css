@@ -416,13 +416,18 @@ a {
     }
 }
 
-pre, code, {
-    font-family: $font-family-monospace;
-    color: $col-text-hl;
+code {
     @include background-hl();
+    font-family: $font-family-monospace;
+    padding: 1px 0.2em;
+    border: 1px solid $col-base1;
 }
 pre { 
+    @include background-hl();
+    font-family: $font-family-monospace;
+    color: $col-text-hl;
     font-size: $font-size-base;
+
     @media #{$small-up} {
         font-size: 9.5pt;
     }

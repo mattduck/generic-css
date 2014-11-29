@@ -661,23 +661,35 @@ a {
   a:after {
     content: " "; }
 
-pre, code {
+code {
+  background-color: #eee8d5;
   font-family: "Inconsolata", monospace;
-  color: #586e75;
-  background-color: #eee8d5; }
-  pre ::selection, code ::selection {
+  padding: 1px 0.2em;
+  border: 1px solid #93a1a1; }
+  code ::selection {
     background-color: #fdf6e3; }
-  pre ::-moz-selection, code ::-moz-selection {
+  code ::-moz-selection {
     background-color: #fdf6e3; }
-  pre::selection, code::selection {
+  code::selection {
     background-color: #fdf6e3; }
-  pre::-moz-selection, code::-moz-selection {
+  code::-moz-selection {
     background-color: #fdf6e3; }
 
 pre {
+  background-color: #eee8d5;
+  font-family: "Inconsolata", monospace;
+  color: #586e75;
   font-size: 16px;
   border: none;
   padding: 8px; }
+  pre ::selection {
+    background-color: #fdf6e3; }
+  pre ::-moz-selection {
+    background-color: #fdf6e3; }
+  pre::selection {
+    background-color: #fdf6e3; }
+  pre::-moz-selection {
+    background-color: #fdf6e3; }
   @media only screen {
     pre {
       font-size: 9.5pt; } }
