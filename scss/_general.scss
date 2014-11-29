@@ -284,9 +284,6 @@ h1, h2, h3, h4, h5, h6 {
     a:visited {
         color: $col-blue;
     }
-    a:hover, a:focus {
-        color: $col-red;
-    }
     img {
         @include background-hl();
     }
@@ -402,10 +399,7 @@ ol {
     }
 }
 
-em, i {
-    color: $col-text-hl;
-}
-strong, b {
+strong, b, em, i {
     color: $col-text-hl;
 }
 
@@ -418,7 +412,15 @@ a {
     }
 
     &:focus, &:hover {
+        color: $col-orange !important;
+    }
+
+    *:hover, *:focus {
         color: $col-orange;
+    }
+
+    strong, b, em, i {
+        color: inherit;
     }
 }
 
@@ -566,6 +568,6 @@ button {
     }
 
     &:hover {
-        color: $col-red;
+        color: $col-orange;
     }
 }

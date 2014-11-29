@@ -80,6 +80,10 @@ ultricies nec, pellentesque eu, pretium quis, sem.</p>
     <li><strong>This is strong</strong></li>
     <li><em>This is emphasised</em></li>
     <li><code>This is code</code></li>
+
+    <li><a href="#">This is a link with <code>code text</code></a></li>
+    <li><a href="#">This is a link with <strong>strong text</strong></a></li>
+    <li><a href="#">This is a link with <em>emphasised text</em></a></li>
 </ul>
 
 
@@ -87,17 +91,29 @@ ultricies nec, pellentesque eu, pretium quis, sem.</p>
 <h2>Text classes</h2>
 
 <dl>
-    <dt>.done</td>
-    <dd><span class='done'>ORG MODE DONE KEYWORD</span></td>
+    <dt>.done</dt>
+    <dd>
+        <span class="done">ORG MODE DONE KEYWORD</span><br>
+        <a href="#">Link <span class="done">DONE</span></a>
+    </dd>
 
-    <dt>.todo</td>
-    <dd><span class='todo'>ORG MODE TODO KEYWORD</span></td>
+    <dt>.todo</dt>
+    <dd>
+        <span class="todo">ORG MODE TODO KEYWORD</span><br>
+        <a href="#">Link <span class="todo">TODO</span></a>
+    </dd>
 
-    <dt>.tag</td>
-    <dd><span class='tag'>Org mode tag</span></td>
+    <dt>.tag</dt>
+    <dd>
+        <span class="tag">Org mode tag</span><br>
+        <a href="#">Link <span class="tag">tag</span></a>
+    </dd>
 
-    <dt>.timestamp</td>
-    <dd><span class='timestamp'>Org mode timestamp <2014-01-01></span></td>
+    <dt>.timestamp</dt>
+    <dd>
+        <span class="timestamp">Org mode timestamp <2014-01-01></span><br>
+        <a href="#">Link <span class="timestamp">timestamp</span></a>
+    </dd>
 </dl>
 
 <hr>
@@ -149,6 +165,9 @@ elit. Aenean commodo ligula eget dolor. Aenean massa.
 Cum sociis natoque penatibus et magnis dis parturient 
 montes, nascetur ridiculus mus. Donec quam felis, 
 ultricies nec, pellentesque eu, pretium quis, sem.</p>
+
+<hr>
+<h2>Title with <a href="#">link inside</a></h2>
 
 
 <hr>

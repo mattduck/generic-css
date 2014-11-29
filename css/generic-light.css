@@ -521,8 +521,6 @@ h1, h2, h3, h4, h5, h6 {
       margin-bottom: 1em; } }
   h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
     color: #268bd2; }
-  h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus {
-    color: #dc322f; }
   h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
     background-color: #eee8d5; }
     h1 img ::selection, h2 img ::selection, h3 img ::selection, h4 img ::selection, h5 img ::selection, h6 img ::selection {
@@ -644,10 +642,7 @@ ol {
         ol ol ol ol ol {
           list-style: decimal-leading-zero; }
 
-em, i {
-  color: #586e75; }
-
-strong, b {
+strong, b, em, i {
   color: #586e75; }
 
 a {
@@ -656,9 +651,11 @@ a {
   a:visited {
     color: #6c71c4; }
   a:focus, a:hover {
+    color: #cb4b16 !important; }
+  a *:hover, a *:focus {
     color: #cb4b16; }
-  a * {
-    color: #268bd2; }
+  a strong, a b, a em, a i {
+    color: inherit; }
 
 code {
   background-color: #eee8d5;
@@ -825,7 +822,7 @@ button {
     button {
       font-size: 14.4px; } }
   button:hover {
-    color: #dc322f; }
+    color: #cb4b16; }
 
 /******************************************************************************/
 /*
