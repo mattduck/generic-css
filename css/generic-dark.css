@@ -657,6 +657,8 @@ a {
     color: #6c71c4; }
   a:focus, a:hover {
     color: #cb4b16; }
+  a * {
+    color: #268bd2; }
 
 code {
   background-color: #073642;
@@ -824,9 +826,6 @@ button {
       font-size: 14.4px; } }
   button:hover {
     color: #dc322f; }
-
-span {
-  margin: 0 8px 8px 0; }
 
 /******************************************************************************/
 /*
