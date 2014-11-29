@@ -922,4 +922,7 @@ table {
 .section-number-5, .section-number-6 {
   color: #839496; }
 
+dt {
+  font-weight: 400; }
+
 /*# sourceMappingURL=generic-dark.css.map */
